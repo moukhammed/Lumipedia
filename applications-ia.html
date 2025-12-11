@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Applications de l'IA - Lumipedia</title>
+<link rel="stylesheet" href="../style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>Applications de l'IA</h1>
+    <button id="theme-toggle" class="theme-toggle">🌙 Mode sombre</button>
+</header>
+
+<div class="container">
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="ia.html">Thème IA</a>
+        <a href="ia-introduction.html">Introduction</a>
+        <a href="types-ia.html">Types d’IA</a>
+        <a href="ethique-ia.html">Éthique</a>
+        <a href="applications-ia.html">Applications</a>
+    </nav>
+
+    <main>
+        <h2>Où l’IA est utilisée ?</h2>
+        <img src="../images/application-ia.png" alt="Applications de l'IA">
+        <p>L’Intelligence Artificielle est aujourd’hui utilisée dans de nombreux secteurs. Dans la santé, elle aide au diagnostic et à la recherche médicale. Dans le commerce, elle personnalise les recommandations et optimise les ventes. Dans les transports, l’IA permet de développer des véhicules autonomes et d’améliorer la sécurité. Elle est également utilisée dans la finance, l’éducation, la sécurité, et même dans la création artistique.</p>
+
+        <h3>Exemples concrets</h3>
+        <p>Des algorithmes d’IA peuvent analyser des millions de données pour détecter des maladies rares, traduire automatiquement des textes en plusieurs langues, ou encore identifier des fraudes financières. L’IA influence notre quotidien plus que nous ne le réalisons.</p>
+    </main>
+</div>
+
+<footer>© 2025 Lumipedia</footer>
+
+<script>
+const btn = document.getElementById('theme-toggle');
+// Vérifie le mode sombre enregistré
+if(localStorage.getItem('mode') === 'dark'){
+    document.body.classList.add('dark-mode');
+    btn.textContent = '☀️ Mode clair';
+}
+
+btn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if(document.body.classList.contains('dark-mode')){
+        btn.textContent = '☀️ Mode clair';
+        localStorage.setItem('mode', 'dark');
+    } else {
+        btn.textContent = '🌙 Mode sombre';
+        localStorage.setItem('mode', 'light');
+    }
+});
+</script>
+
+</body>
+</html>

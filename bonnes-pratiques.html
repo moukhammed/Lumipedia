@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bonnes pratiques - Lumipedia</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Bonnes pratiques en cybersécurité</h1>
+  <button id="theme-toggle" class="theme-toggle">🌙 Mode sombre</button>
+</header>
+
+<div class="container">
+<nav>
+  <a href="cybersecurite.html">Thème Cybersécurité</a>
+  <a href="cybersecurite-introduction.html">Introduction</a>
+  <a href="attaques.html">Types de cyberattaques</a>
+  <a href="ia-cybersecurite.html">IA et cybersécurité</a>
+</nav>
+
+<main>
+<h2>Conseils pour sécuriser vos données</h2>
+<img src="../images/cybersecurité-mdp.jpg" alt="Bonnes pratiques cybersécurité">
+<p>Pour protéger vos données personnelles et professionnelles, il est essentiel d’adopter de bonnes pratiques en ligne. Cela inclut l’utilisation de mots de passe forts, la mise à jour régulière des logiciels, la prudence face aux emails suspects, et l’utilisation de solutions antivirus et pare-feu.</p>
+
+<h3>Autres conseils</h3>
+<p>Il est également recommandé de sauvegarder régulièrement ses données, de limiter l’accès aux informations sensibles et de former les utilisateurs aux risques numériques. Ces mesures simples réduisent considérablement le risque de cyberattaques.</p>
+</main>
+</div>
+
+<footer>© 2025 Lumipedia</footer>
+
+<script>
+// Mode sombre / clair
+const btn = document.getElementById('theme-toggle');
+btn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+  btn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Mode clair' : '🌙 Mode sombre';
+});
+
+// Sauvegarde du thème
+if(localStorage.getItem('theme') === 'dark'){
+  document.body.classList.add('dark-mode');
+  btn.textContent = '☀️ Mode clair';
+} else {
+  btn.textContent = '🌙 Mode sombre';
+}
+</script>
+
+</body>
+</html>
+

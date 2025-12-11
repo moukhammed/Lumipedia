@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cybersécurité - Lumipedia</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <h1>Cybersécurité</h1>
+  <button id="theme-toggle" class="theme-toggle">🌙 Mode sombre</button>
+</header>
+
+<div class="container">
+
+    <!-- ===== MENU ===== -->
+    <nav>
+        <a href="cybersecurite-introduction.html">Introduction</a>
+        <a href="attaques.html">Types de cyberattaques</a>
+        <a href="ia-cybersecurite.html">IA et cybersécurité</a>
+        <a href="bonnes-pratiques.html">Bonnes pratiques</a>
+    </nav>
+
+    <main>
+        <!-- ========================= -->
+        <!-- INTRODUCTION             -->
+        <!-- ========================= -->
+        <section id="intro">
+            <h2>Explorez la cybersécurité</h2>
+            <img src="images/cybersécurité.jpg" alt="Illustration cybersécurité">
+            <p>
+                La cybersécurité est un domaine essentiel à notre époque numérique. Elle concerne la protection des systèmes informatiques, des réseaux et des données contre les attaques, le piratage et les fuites d’informations.
+            </p>
+        </section>
+
+        <!-- ========================= -->
+        <!-- VIDEO =================== -->
+        <!-- ========================= -->
+        <section id="video">
+            <h3>Vidéo explicative sur la cybersécurité</h3>
+            <iframe width="100%" height="350"
+                src="https://www.youtube.com/embed/rsppObSGKKY"
+                title="Cybersécurité - Explication"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </section>
+    </main>
+</div>
+
+<footer>© 2025 Lumipedia</footer>
+
+<script>
+// ===== Mode sombre / clair =====
+const btn = document.getElementById('theme-toggle');
+btn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if(document.body.classList.contains('dark-mode')){
+        btn.textContent = '☀️ Mode clair';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        btn.textContent = '🌙 Mode sombre';
+        localStorage.setItem('theme', 'light');
+    }
+});
+
+// ===== Sauvegarde du thème =====
+if(localStorage.getItem('theme') === 'dark'){
+    document.body.classList.add('dark-mode');
+    btn.textContent = '☀️ Mode clair';
+} else {
+    document.body.classList.remove('dark-mode');
+    btn.textContent = '🌙 Mode sombre';
+}
+</script>
+
+</body>
+</html>

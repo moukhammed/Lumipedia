@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glossaire - Lumipedia</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Glossaire</h1>
+  <button id="theme-toggle" class="theme-toggle">🌙 Mode sombre</button>
+</header>
+
+<div class="container">
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="ia.html">Thème IA</a>
+  <a href="cybersecurite.html">Thème Cybersécurité</a>
+  <a href="ressources.html">Ressources</a>
+</nav>
+
+<main>
+<h2>Termes importants</h2>
+<img src="../images/glossaire.jpeg" alt="Glossaire">
+<p>Le glossaire regroupe les principaux termes utilisés dans le domaine de l’IA et de la cybersécurité. Vous y trouverez des définitions claires pour comprendre des concepts comme algorithme, machine learning, phishing, ransomware, etc. Il s’agit d’un outil pratique pour tous ceux qui débutent ou souhaitent approfondir leurs connaissances.</p>
+</main>
+</div>
+
+<footer>© 2025 Lumipedia</footer>
+
+<script>
+// Mode sombre / clair
+const btn = document.getElementById('theme-toggle');
+btn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+  btn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Mode clair' : '🌙 Mode sombre';
+});
+
+// Sauvegarde du thème
+if(localStorage.getItem('theme') === 'dark'){
+  document.body.classList.add('dark-mode');
+  btn.textContent = '☀️ Mode clair';
+} else {
+  btn.textContent = '🌙 Mode sombre';
+}
+</script>
+
+</body>
+</html>

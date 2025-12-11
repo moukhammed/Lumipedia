@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Introduction à la cybersécurité - Lumipedia</title>
+<link rel="stylesheet" href="../style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>Introduction à la cybersécurité</h1>
+    <button id="theme-toggle" class="theme-toggle">🌙 Mode sombre</button>
+</header>
+
+<div class="container">
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="cybersecurite.html">Thème Cybersécurité</a>
+        <a href="attaques.html">Types de cyberattaques</a>
+        <a href="ia-cybersecurite.html">IA et cybersécurité</a>
+        <a href="bonnes-pratiques.html">Bonnes pratiques</a>
+    </nav>
+
+    <main>
+        <h2>Qu'est-ce que la cybersécurité ?</h2>
+        <img src="../images/cybersécurité2.webp" alt="Cybersécurité">
+        <p>La cybersécurité regroupe l’ensemble des techniques et bonnes pratiques pour protéger les systèmes informatiques, les réseaux et les données contre les attaques, le piratage et les fuites d’informations. Elle est devenue essentielle dans un monde où nos données personnelles et professionnelles sont majoritairement numériques.</p>
+
+        <h3>Objectifs de la cybersécurité</h3>
+        <p>L’objectif est de garantir la confidentialité, l’intégrité et la disponibilité des informations. Cela inclut la protection contre les virus, les ransomwares, le phishing, les intrusions et toutes formes de cyberattaques. La cybersécurité vise également à sensibiliser les utilisateurs aux risques et à promouvoir des comportements sécurisés en ligne.</p>
+    </main>
+</div>
+
+<footer>© 2025 Lumipedia</footer>
+
+<script>
+const btn = document.getElementById('theme-toggle');
+if(localStorage.getItem('mode') === 'dark'){
+    document.body.classList.add('dark-mode');
+    btn.textContent = '☀️ Mode clair';
+}
+
+btn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if(document.body.classList.contains('dark-mode')){
+        btn.textContent = '☀️ Mode clair';
+        localStorage.setItem('mode', 'dark');
+    } else {
+        btn.textContent = '🌙 Mode sombre';
+        localStorage.setItem('mode', 'light');
+    }
+});
+</script>
+
+</body>
+</html>

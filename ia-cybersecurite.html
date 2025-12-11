@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IA et cybersécurité - Lumipedia</title>
+<link rel="stylesheet" href="../style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>IA et cybersécurité</h1>
+    <button id="theme-toggle" class="theme-toggle">🌙 Mode sombre</button>
+</header>
+
+<div class="container">
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="cybersecurite.html">Thème Cybersécurité</a>
+        <a href="cybersecurite-introduction.html">Introduction</a>
+        <a href="attaques.html">Types de cyberattaques</a>
+        <a href="bonnes-pratiques.html">Bonnes pratiques</a>
+    </nav>
+
+    <main>
+        <h2>Comment l’IA renforce la cybersécurité</h2>
+        <img src="../images/cybersécurité.jpg" alt="IA et cybersécurité">
+        <p>L’Intelligence Artificielle est de plus en plus utilisée pour améliorer la cybersécurité. Les algorithmes peuvent détecter des anomalies, identifier des comportements suspects et prévenir des attaques avant qu’elles ne causent des dommages. L’IA permet également d’automatiser la surveillance des systèmes et d’analyser rapidement de grandes quantités de données pour détecter des menaces.</p>
+
+        <h3>Applications concrètes</h3>
+        <p>Les systèmes de détection d’intrusion basés sur l’IA peuvent alerter les équipes de sécurité en temps réel. Les filtres anti-phishing utilisent l’apprentissage automatique pour reconnaître des emails frauduleux. De plus, l’IA contribue à anticiper les attaques en simulant des scénarios et en renforçant la protection des réseaux.</p>
+    </main>
+</div>
+
+<footer>© 2025 Lumipedia</footer>
+
+<script>
+const btn = document.getElementById('theme-toggle');
+// Vérifie le mode sombre enregistré
+if(localStorage.getItem('mode') === 'dark'){
+    document.body.classList.add('dark-mode');
+    btn.textContent = '☀️ Mode clair';
+}
+
+btn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if(document.body.classList.contains('dark-mode')){
+        btn.textContent = '☀️ Mode clair';
+        localStorage.setItem('mode', 'dark');
+    } else {
+        btn.textContent = '🌙 Mode sombre';
+        localStorage.setItem('mode', 'light');
+    }
+});
+</script>
+
+</body>
+</html>

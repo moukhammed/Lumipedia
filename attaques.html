@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Types de cyberattaques - Lumipedia</title>
+<link rel="stylesheet" href="../style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>Types de cyberattaques</h1>
+    <button id="theme-toggle" class="theme-toggle">🌙 Mode sombre</button>
+</header>
+
+<div class="container">
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="cybersecurite.html">Thème Cybersécurité</a>
+        <a href="cybersecurite-introduction.html">Introduction</a>
+        <a href="ia-cybersecurite.html">IA et cybersécurité</a>
+        <a href="bonnes-pratiques.html">Bonnes pratiques</a>
+        <a href="types-cyberattaques.html">Types d'attaques</a>
+    </nav>
+
+    <main>
+        <h2>Principaux types de cyberattaques</h2>
+        <img src="../images/Hacker.jpg" alt="Cyberattaques">
+        <p>Il existe de nombreuses formes de cyberattaques. Les plus courantes incluent les virus et logiciels malveillants, le phishing pour voler des informations personnelles, les attaques par déni de service (DDoS) qui saturent les serveurs, et les ransomwares qui bloquent les données jusqu’au paiement d’une rançon. Certaines attaques visent les entreprises, d’autres les particuliers.</p>
+
+        <h3>Impact</h3>
+        <p>Les cyberattaques peuvent entraîner des pertes financières importantes, la divulgation de données sensibles, la paralysie de systèmes critiques et des atteintes à la réputation. Comprendre ces attaques est essentiel pour se protéger et renforcer la sécurité des systèmes informatiques.</p>
+    </main>
+</div>
+
+<footer>© 2025 Lumipedia</footer>
+
+<script>
+const btn = document.getElementById('theme-toggle');
+// Vérifie le mode sombre enregistré
+if(localStorage.getItem('mode') === 'dark'){
+    document.body.classList.add('dark-mode');
+    btn.textContent = '☀️ Mode clair';
+}
+
+btn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if(document.body.classList.contains('dark-mode')){
+        btn.textContent = '☀️ Mode clair';
+        localStorage.setItem('mode', 'dark');
+    } else {
+        btn.textContent = '🌙 Mode sombre';
+        localStorage.setItem('mode', 'light');
+    }
+});
+</script>
+
+</body>
+</html>

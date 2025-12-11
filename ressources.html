@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ressources - Lumipedia</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header>
+  <h1>Ressources</h1>
+  <button id="theme-toggle" class="theme-toggle">🌙 Mode sombre</button>
+</header>
+
+<div class="container">
+<nav>
+  <a href="index.html">Accueil</a>
+  <a href="ia.html">Thème IA</a>
+  <a href="cybersecurite.html">Thème Cybersécurité</a>
+  <a href="glossaire.html">Glossaire</a>
+</nav>
+
+<main>
+<h2>Liens et documents utiles</h2>
+<img src="../images/ressources.jpeg" alt="Ressources">
+<p>Cette section fournit des ressources supplémentaires pour approfondir vos connaissances sur l’IA et la cybersécurité. Vous y trouverez des articles scientifiques, des guides pratiques, des tutoriels et des sites web spécialisés. Ces ressources sont sélectionnées pour leur fiabilité et leur pertinence, et elles permettent d’aller plus loin dans l’apprentissage et la compréhension des sujets abordés sur Lumipedia.</p>
+</main>
+</div>
+
+<footer>© 2025 Lumipedia</footer>
+
+<script>
+// Mode sombre / clair
+const btn = document.getElementById('theme-toggle');
+btn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem('theme', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+  btn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Mode clair' : '🌙 Mode sombre';
+});
+
+// Sauvegarde du thème
+if(localStorage.getItem('theme') === 'dark'){
+  document.body.classList.add('dark-mode');
+  btn.textContent = '☀️ Mode clair';
+} else {
+  btn.textContent = '🌙 Mode sombre';
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thème IA - Lumipedia</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Rubik+Bubbles&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <h1>Intelligence Artificielle (IA)</h1>
+  <button class="theme-toggle" onclick="toggleTheme()">🌙 Mode sombre</button>
+</header>
+
+<div class="container">
+
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="ia-introduction.html">Introduction</a>
+        <a href="types-ia.html">Types d’IA</a>
+        <a href="applications-ia.html">Applications</a>
+        <a href="ethique-ia.html">Éthique</a>
+    </nav>
+
+    <main>
+        <h2>Explorez l’IA</h2>
+
+        <img src="images/IA.jpg" alt="Concept IA">
+
+        <p>
+        L’Intelligence Artificielle (IA) est l’un des domaines les plus fascinants et en rapide évolution de l’informatique. Elle englobe tout ce qui permet aux machines de simuler l’intelligence humaine, que ce soit pour reconnaître des images, comprendre le langage, prendre des décisions complexes ou apprendre de nouvelles tâches.
+        </p>
+
+        <!-- VIDEO YOUTUBE EN FRANCAIS -->
+        <h3>Vidéo explicative sur l’IA</h3>
+        <iframe width="100%" height="350"
+          src="https://www.youtube.com/embed/TfL-H8goDF0"
+          title="Dossier : l'intelligence artificielle"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+    </main>
+</div>
+
+<footer>© 2025 Lumipedia</footer>
+
+<script>
+    // Charger le thème depuis localStorage
+    const savedTheme = localStorage.getItem("theme");
+    if(savedTheme === "dark") document.body.classList.add("dark-mode");
+
+    // Fonction toggle
+    function toggleTheme(){
+        document.body.classList.toggle("dark-mode");
+        if(document.body.classList.contains("dark-mode")){
+            localStorage.setItem("theme","dark");
+            document.querySelector(".theme-toggle").textContent = "☀️ Mode clair";
+        } else {
+            localStorage.setItem("theme","light");
+            document.querySelector(".theme-toggle").textContent = "🌙 Mode sombre";
+        }
+    }
+</script>
+
+</body>
+</html>
+
