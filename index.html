@@ -61,6 +61,23 @@
       height: 70px;
   }
 
+  /* QR code section */
+  #epitech-info {
+      text-align: center;
+      margin: 50px auto;
+  }
+  #epitech-info img {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 20px;
+  }
+  #epitech-info a {
+      display: block;
+      font-weight: bold;
+      color: #5b4fff;
+      text-decoration: none;
+      margin-bottom: 5px;
+  }
 </style>
 </head>
 <body>
@@ -112,6 +129,13 @@
     </div>
 </div>
 
+<!-- ===== QR code Epitech ===== -->
+<div id="epitech-info">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.epitech.eu/concours/?utm_source=google&utm_medium=cpc&utm_campaign=20775344522&utm_content=164189183188&utm_term=epitech" alt="QR Code Epitech">
+    <a href="https://www.google.com/maps/place/Epitech+Nice,+9+Avenue+de+la+Lib%C3%A9ration,+06000+Nice,+France" target="_blank">Epitech Nice - L'école qui m'a accueilli pour le stage</a>
+    <p>Grâce à elle, j'ai pu créer ce site.</p>
+</div>
+
 <footer>© 2025 Lumipedia</footer>
 
 <script>
@@ -139,7 +163,6 @@ window.addEventListener("keydown", function(e) {
     }
 }, { passive: false });
 
-
 // ===== Jeu =====
 const canvas = document.getElementById('game');
 const ctx = canvas.getContext('2d');
@@ -161,7 +184,7 @@ let keys = {};
 document.addEventListener('keydown', e => keys[e.key] = true);
 document.addEventListener('keyup', e => keys[e.key] = false);
 
-// === Contrôles tactiles (bloque le scroll) ===
+// === Contrôles tactiles ===
 document.querySelectorAll('#mobile-controls button').forEach(btn => {
     btn.addEventListener('touchstart', (e) => {
         e.preventDefault();
@@ -173,14 +196,9 @@ document.querySelectorAll('#mobile-controls button').forEach(btn => {
         keys[btn.dataset.key] = false;
     }, { passive: false });
 
-    btn.addEventListener('mousedown', () => {
-        keys[btn.dataset.key] = true;
-    });
-    btn.addEventListener('mouseup', () => {
-        keys[btn.dataset.key] = false;
-    });
+    btn.addEventListener('mousedown', () => { keys[btn.dataset.key] = true; });
+    btn.addEventListener('mouseup', () => { keys[btn.dataset.key] = false; });
 });
-
 
 // ===== Fonctions du jeu =====
 function spawnCircle(){
@@ -296,7 +314,6 @@ function endGame(){
 
 startBtn.addEventListener('click',startGame);
 restartBtn.addEventListener('click',startGame);
-
 </script>
 </body>
 </html>
