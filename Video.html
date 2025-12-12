@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vidéo IA - Lumipedia</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Vidéo IA</h1>
+    <!-- Bouton de mode sombre/clair -->
+    <button id="theme-toggle" class="theme-toggle">🌙 Mode sombre</button>
+</header>
+
+<div class="container">
+    <!-- Menu de navigation -->
+    <nav>
+        <a href="../index.html">Accueil</a>
+        <a href="ia.html">Thème IA</a>
+        <a href="Video.html" class="active">Vidéo IA</a>
+        <a href="applications-ia.html">Applications</a>
+        <a href="ethique-ia.html">Éthique</a>
+    </nav>
+
+    <main>
+        <h2>Exemple de vidéo créée avec l’IA</h2>
+        <p>Voici une vidéo créée avec des outils d’intelligence artificielle comme Grok et d'autres générateurs vidéo.</p>
+
+        <!-- Vidéo -->
+        <video controls width="70%" style="margin-top: 15px; border-radius: 10px;">
+            <source src="Vidéo-IA.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la lecture vidéo.
+        </video>
+    </main>
+</div>
+
+<footer>© 2025 Lumipedia</footer>
+
+<script>
+// ===== Mode sombre / clair =====
+const btn = document.getElementById('theme-toggle');
+btn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    if(document.body.classList.contains('dark-mode')){
+        btn.textContent = '☀️ Mode clair';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        btn.textContent = '🌙 Mode sombre';
+        localStorage.setItem('theme', 'light');
+    }
+});
+
+// ===== Sauvegarde du thème =====
+if(localStorage.getItem('theme') === 'dark'){
+    document.body.classList.add('dark-mode');
+    btn.textContent = '☀️ Mode clair';
+} else {
+    document.body.classList.remove('dark-mode');
+    btn.textContent = '🌙 Mode sombre';
+}
+</script>
+
+</body>
+</html>
